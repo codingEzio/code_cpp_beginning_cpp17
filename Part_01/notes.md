@@ -1,5 +1,8 @@
 
-### X
+### About ```import```
+- Okay, okay, I know, it's not dynamic langs like *Python*,
+    - that is the ```import XX; XX.method()```
+    - For *C++*, I assume y'all need to check the respective docs?
 
 ### Compiling commands
 - Here you are 

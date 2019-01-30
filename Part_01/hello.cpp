@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 namespace Boilerplate
 {
@@ -220,13 +221,84 @@ int main()
                 The only exception is the `std::setw()` (only the next). 
         */
         std::cout << std::setprecision(10)
-                  << std::setw(25)
+                  << std::setw(15)
                   << std::fixed << 30.75 << ", "
                   << std::scientific << 30.75 << ", "
                   << std::defaultfloat << 30.75 << ", "
                   << std::hex << 30 << ", "
                   << std::showbase
-                  << std::hex << 30 << std::endl;
+                  << std::hex << 30 << "\n"
+                  << std::endl;
+    }
+
+    {
+        long rand_num{};
+        int ra{}, rb{}, rc{5}, rd{4};
+
+        ra = rc;
+        rb = rd;
+        rand_num = ra * rb;
+
+        // Simple calculation :D
+        std::cout << std::dec << rand_num << std::endl;
+    }
+
+    {
+        // Just use 'double' !
+        float pi_f{3.1415926F};
+        double pi_d{3.14159265358979};
+        long double pi_ld{3.14159265358979323L};
+
+        // Other types of valid literals
+        double sci_int{5E3};
+        double sci_flt{5.5E3};
+        double sci_int_ng{10E-2};
+        double sci_flt_ndot{.001E3};
+
+        std::cout << sci_int << ", "
+                  << sci_flt << ", "
+                  << sci_int_ng << ", "
+                  << sci_flt_ndot << ",\n"
+                  << std::endl;
+
+        // Those invalid floating-point results
+        double mem1{10}, mem2{}, mem3{0};
+
+        // => inf
+        double res_inf_divnone{mem1 / mem2};
+        double res_inf_divzero{mem1 / mem3};
+
+        // => nan
+        double res_nan_optinf{res_inf_divnone - res_inf_divzero};
+        double res_nan_dbzero{mem3 / mem3};
+
+        std::cout << res_inf_divnone << ", "
+                  << res_inf_divzero << ", "
+                  << std::endl;
+
+        std::cout << res_nan_optinf << ", "
+                  << res_nan_dbzero << ", "
+                  << std::endl;
+
+        // Check whether it's valid or not (<cmath>)
+        std::cout << std::isinf(res_inf_divnone) << ", "  // => 1
+                  << std::isnan(res_nan_dbzero) << ", \n" // => 1
+                  << std::endl;
+    }
+
+    {
+        // Math functions
+
+        std::cout << abs(20) << ", " << abs(-3.5) << ", "
+                  << ceil(3.9) << ", " << ceil(-3.9) << ", "
+                  << floor(3.9) << ", " << floor(-3.9) << ", "
+                  << "\n"
+                  << exp(1) << ", " << log(exp(1)) << ", " << log10(10)
+                  << "\n"
+                  << pow(10, 4) << ", " << sqrt(25)
+                  << "\n"
+                  << round(13) << ", " << round(13.6) << ", " << round(13.67) << ", "
+                  << std::endl;
     }
 
     return 0;
