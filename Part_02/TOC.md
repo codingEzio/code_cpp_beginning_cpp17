@@ -5,8 +5,8 @@
     - [x] The **bitwise operators**
     - [x] Defining **new type** & limits its possible values 
     - [x] Defining **alternative names** for existing data types
-    - [ ] The **storage duration of a variable** & what determines it
-    - [ ] The **variable scope** & what its effects are 
+    - [x] The **storage duration of a variable** & what determines it
+    - [x] The **variable scope** & what its effects are 
 - Note
     - I skipped the *exec order* since it's too easy.
     - I skipped the *bitwise opts* since it's not that helpful to me.
@@ -18,4 +18,8 @@
         - [How to declare enums with float value](https://forum.unity.com/threads/how-to-declare-enums-with-float-value.75447/)
     - The *alternative names* 
         - Code typed, not many refs.
-    - 
+    - The *storage duration of a variable*
+        - [C++ doc - Lifetime](https://en.cppreference.com/w/cpp/language/lifetime)
+        - [Scope vs. Lifetime of Variable](https://stackoverflow.com/questions/11137516/scope-vs-lifetime-of-variable)
+    - The **variable scope**
+        - Code typed, not many refs.
