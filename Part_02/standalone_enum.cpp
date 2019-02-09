@@ -1,5 +1,8 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
+
+void enum_opts();
 
 int main()
 {
@@ -55,4 +58,43 @@ int main()
          << static_cast<char>(Punctuation::Exclamation) << " "
          << static_cast<char>(Punctuation::Question) << " ]"
          << endl;
+
+    enum_opts();
+}
+
+void enum_opts()
+{
+    enum class Day
+    {
+        Mond,
+        Tues,
+        Wedn,
+        Thur,
+        Frid,
+        Satu,
+        Sund
+    };
+    Day yesterday{Day::Mond}, today{Day::Tues}, tomorrow{Day::Wedn};
+    const Day poets_day{Day::Frid};
+
+    enum class Punc : char
+    {
+        Comma = ',',
+        Exclamation = '!',
+        Question = '?'
+    };
+    Punc ch{Punc::Comma};
+
+    cout << "yesterday's value (0) is  " << static_cast<int>(yesterday)
+         << static_cast<char>(ch) << "\n"
+         << "but poets_day's (4) is    " << static_cast<int>(poets_day)
+         << static_cast<char>(Punc::Exclamation) << endl;
+
+    today = Day::Thur;    // => 3
+    ch = Punc::Question;  // => ?
+    tomorrow = poets_day; // => 4
+
+    cout << "today's value  (3) [" << static_cast<int>(today) << "] \n"
+         << "poets_day      (4) [" << static_cast<int>(poets_day) << "] "
+         << static_cast<char>(ch) << endl;
 }
